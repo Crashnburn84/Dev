@@ -10,6 +10,8 @@
 		31226FB92135D53600E795D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31226FB82135D53600E795D6 /* AppDelegate.swift */; };
 		31226FC02135D53900E795D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31226FBF2135D53900E795D6 /* Assets.xcassets */; };
 		31226FC32135D53900E795D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31226FC12135D53900E795D6 /* LaunchScreen.storyboard */; };
+		31226FCD2135FCDA00E795D6 /* CoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31226FCC2135FCDA00E795D6 /* CoolCell.swift */; };
+		31226FCF2136005900E795D6 /* CoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31226FCE2136005900E795D6 /* CoolController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		31226FBF2135D53900E795D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31226FC22135D53900E795D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31226FC42135D53900E795D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31226FCC2135FCDA00E795D6 /* CoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolCell.swift; sourceTree = "<group>"; };
+		31226FCE2136005900E795D6 /* CoolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				31226FB82135D53600E795D6 /* AppDelegate.swift */,
+				31226FCE2136005900E795D6 /* CoolController.swift */,
+				31226FCC2135FCDA00E795D6 /* CoolCell.swift */,
 				31226FBF2135D53900E795D6 /* Assets.xcassets */,
 				31226FC12135D53900E795D6 /* LaunchScreen.storyboard */,
 				31226FC42135D53900E795D6 /* Info.plist */,
@@ -128,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31226FCF2136005900E795D6 /* CoolController.swift in Sources */,
+				31226FCD2135FCDA00E795D6 /* CoolCell.swift in Sources */,
 				31226FB92135D53600E795D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
