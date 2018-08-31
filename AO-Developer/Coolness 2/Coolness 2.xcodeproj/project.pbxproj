@@ -14,7 +14,8 @@
 		318DFCE82138772800570226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DFCE42138772700570226 /* AppDelegate.swift */; };
 		318DFCE92138772800570226 /* CoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DFCE52138772700570226 /* CoolView.swift */; };
 		318DFCEA2138772800570226 /* CoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DFCE62138772800570226 /* CoolController.swift */; };
-		31D7CAB821389F93009022BE /* CoolStuff.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D7CAB721389F93009022BE /* CoolStuff.xib */; };
+		3194D43021396CEE00E8DB61 /* CoolStuff.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3194D42F21396CEE00E8DB61 /* CoolStuff.xib */; };
+		31D7CAB821389F93009022BE /* CoolStuffOld2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D7CAB721389F93009022BE /* CoolStuffOld2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		318DFCE42138772700570226 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		318DFCE52138772700570226 /* CoolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolView.swift; sourceTree = "<group>"; };
 		318DFCE62138772800570226 /* CoolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolController.swift; sourceTree = "<group>"; };
-		31D7CAB721389F93009022BE /* CoolStuff.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoolStuff.xib; sourceTree = "<group>"; };
+		3194D42F21396CEE00E8DB61 /* CoolStuff.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoolStuff.xib; sourceTree = "<group>"; };
+		31D7CAB721389F93009022BE /* CoolStuffOld2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoolStuffOld2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 			children = (
 				318DFCE42138772700570226 /* AppDelegate.swift */,
 				318DFCE32138772700570226 /* CoolCell.swift */,
-				31D7CAB721389F93009022BE /* CoolStuff.xib */,
 				318DFCE62138772800570226 /* CoolController.swift */,
 				318DFCE52138772700570226 /* CoolView.swift */,
+				3194D42F21396CEE00E8DB61 /* CoolStuff.xib */,
 				316FEF342138584200C815AB /* CoolStuffOld.xib */,
+				31D7CAB721389F93009022BE /* CoolStuffOld2.xib */,
 				316FEF292138578C00C815AB /* Assets.xcassets */,
 				316FEF2B2138578C00C815AB /* LaunchScreen.storyboard */,
 				316FEF2E2138578C00C815AB /* Info.plist */,
@@ -134,8 +137,9 @@
 			files = (
 				316FEF2D2138578C00C815AB /* LaunchScreen.storyboard in Resources */,
 				316FEF352138584200C815AB /* CoolStuffOld.xib in Resources */,
+				3194D43021396CEE00E8DB61 /* CoolStuff.xib in Resources */,
 				316FEF2A2138578C00C815AB /* Assets.xcassets in Resources */,
-				31D7CAB821389F93009022BE /* CoolStuff.xib in Resources */,
+				31D7CAB821389F93009022BE /* CoolStuffOld2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
