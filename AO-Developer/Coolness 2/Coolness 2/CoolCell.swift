@@ -2,6 +2,15 @@ import UIKit
 
 private let textInset = CGPoint(x: 12, y: 8)
 
+//extension UIView
+//{
+//    @IBInspectable var cornerRadius: CGFloat {
+//        get {  }
+//        set {  }
+//    }
+//}
+
+@IBDesignable
 class CoolCell: UIView
 {
     class var textAttributes: [NSAttributedStringKey: Any] {
@@ -9,8 +18,13 @@ class CoolCell: UIView
                 .foregroundColor: UIColor.white]
     }
     
-    var text: String? {
+    @IBInspectable var text: String? {
         didSet { sizeToFit() }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        get { return UIColor(cgColor: layer.borderColor!) }
+        set{ layer.borderColor = newValue?.cgColor }
     }
     
     var highlighted: Bool = false {
@@ -19,18 +33,28 @@ class CoolCell: UIView
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.borderWidth = 3
-        layer.borderColor = UIColor.white.cgColor
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
+        configureLayer()
         configureGestureRecognizer()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        configureLayer()
+        configureGestureRecognizer()
     }
     
-    func configureGestureRecognizer() {
+    override func prepareForInterfaceBuilder() {
+        layer.masksToBounds = true
+    }
+    
+    private func configureLayer() {
+        layer.borderWidth = 3
+        layer.borderColor = UIColor.white.cgColor
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+    }
+    
+    private func configureGestureRecognizer() {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(bounce))
         recognizer.numberOfTapsRequired = 2
         addGestureRecognizer(recognizer)
