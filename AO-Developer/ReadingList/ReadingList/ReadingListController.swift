@@ -2,37 +2,49 @@ import UIKit
 
 class ReadingListController: UITableViewController
 {
-    // MARK: - Unwind segues
+    @IBOutlet var dataSource: ReadingListDataSource!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.rightBarButtonItem = editButtonItem
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier ?? "" {
+        case "View":
+            guard
+                let indexPath = tableView.indexPathForSelectedRow,
+                let controller = segue.realDestination as? ViewBookController else { return }
+            controller.book = dataSource.book(at: indexPath)
+        case "Add":
+            guard let controller = segue.realDestination as? AddBookController else { return }
+            controller.done = { [weak self] book in self?.insert(book: book, at: IndexPath.zero) }
+        default: break
+        }
+    }
+    
+    func insert(book: Book, at indexPath: IndexPath) {
+        dataSource.insert(book: book, at: indexPath)
+        dataSource.save()
+        tableView.reloadData()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+}
+
+extension IndexPath
+{
+    static var zero: IndexPath { return IndexPath(row: 0, section: 0) }
+}
+
+// MARK: - Unwind segues
+extension ReadingListController
+{
     @IBAction func doneEditing(segue: UIStoryboardSegue) {
-        // TODO: Sync UI and save
+        tableView.reloadData()
+        dataSource.save()
+    }
+    @IBAction func doneAdding(segue: UIStoryboardSegue) {
     }
     
     @IBAction func cancel(segue: UIStoryboardSegue) { }
-}
-
-
-// MARK: - UITableViewDataSource methods
-extension ReadingListController
-{
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100 // FIXME: needs no explanation
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Book Summary") else {
-            fatalError("Set the cell's identifier in the storyboard")
-        }
-        
-//        if let cachedCell = tableView.dequeueReusableCell(withIdentifier: "Foo Bar") {
-//            cell = cachedCell
-//        } else {
-//            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Foo Bar")
-//            cell.textLabel?.text = "Row \(indexPath.row + 1)"
-//        }
-        
-        cell.textLabel?.text = "Row \(indexPath.row + 1)"
-        
-        return cell
-    }
 }
