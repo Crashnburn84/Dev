@@ -19,15 +19,14 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         updateDiceImages()
-        
     }
     
     @IBAction func rollButtonPressed(_ sender: UIButton)
     {
         updateDiceImages()
         
-        print(randomDiceIndex1 + 1)
-        print(randomDiceIndex2 + 1)
+//        print(randomDiceIndex1 + 1)
+//        print(randomDiceIndex2 + 1)
     }
     
     func updateDiceImages() {
@@ -36,6 +35,11 @@ class ViewController: UIViewController
         
         diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
         diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+       
+        updateDiceImages()
     }
 }
 
